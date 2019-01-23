@@ -31,8 +31,8 @@ In opencv based approach we used the basic features of open to solve the problem
 * Uses minimum resources.
 
 #### Cons
-..* This is not robust enough, the thresholds need to be adjusted always.
-..* Doesnt work properly on real world data as there is lot of noise. 
+* This is not robust enough, the thresholds need to be adjusted always.
+* Doesnt work properly on real world data as there is lot of noise. 
 
 Here is a sample of the simulator dataset
 ![simulator training images](report/sim_visualization.png)
