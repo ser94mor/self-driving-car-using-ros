@@ -46,4 +46,4 @@ Here are the results of our trained model.
 ### Acknowledgements
 
 - We would like to thank Udacity for providing the instructional videos and learning resources.
-- We would like to thank Alex Lechner for his wonder tutorial on how to do transfer learning on TensorFlow Object Detection API research models and get it to run on older tensorflow versions. https://github.com/alex-lechner/Traffic-Light-Classification/blob/master/README.md#1-the-lazy-approach
+- We would like to thank Alex Lechner for his wonderful tutorial on how to do transfer learning on TensorFlow Object Detection API research models and get it to run on older tensorflow versions, as well as providing datasets. You can view his readme here: https://github.com/alex-lechner/Traffic-Light-Classification/blob/master/README.md#1-the-lazy-approach
