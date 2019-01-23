@@ -16,10 +16,23 @@ Note that obstacle detection is not implemented for this project.
 
 ## Traffic Light Detection Node
 
-A large part of the project is to implement a traffic light detector/classifier that recognizes the color of nearest upcoming traffic light and publishes it to /waypoint_updater node so it can prepare the car to speed up or slow down accordingly. Because the real world images differ substantially from simulator images, we tried out different approaches for both.
+A large part of the project is to implement a traffic light detector/classifier that recognizes the color of nearest upcoming traffic light and publishes it to /waypoint_updater node so it can prepare the car to speed up or slow down accordingly. Because the real world images differ substantially from simulator images, we tried out different approaches for both. The approaches which worked best are described below.
 
 ### Simulator - opencv approach
-@Pradeep - pls explain your approach here
+In opencv based approach we used the basic features of open to solve the problem, the steps are described as below
+..* Image is trandformed to HSV colorspace, as the color feature can be extracted easily in this colorspace.
+..* Mask is applied to isolate red pixels in the image. 
+..* Contour detection is performed on the masked image.
+..* For each contour, area is checked and if it falls under the approximate area of traffic light, polygon detection is performed and checked if the the number of sides is more than minimum required closed loop polygon. 
+..* If the above conditons satisfy there is a redsign in the image. 
+
+#### Pros
+..* This approach is very fast.
+..* Uses minimum resources.
+
+#### Cons
+..* This is not robust enough, the thresholds need to be adjusted always.
+..* Doesnt work properly on real world data as there is lot of noise. 
 
 Here is a sample of the simulator dataset
 ![simulator training images](report/sim_visualization.png)
