@@ -34,9 +34,6 @@ In opencv based approach we used the basic features of open to solve the problem
 * This is not robust enough, the thresholds need to be adjusted always.
 * Doesnt work properly on real world data as there is lot of noise. 
 
-Here is a sample of the simulator dataset
-![simulator training images](report/sim_visualization.png)
-
 ### Test Lot - SSD (Single Shot Detection)
 We need to solve both object detection - where in the image is the object, and object classification - given a localized image, classify the object in the image. While there are teams who approached it as 2 separate problems to be solved, recent advancements in Deep Learning has developed models that attempt to solve both at once - SSD (Single Shot Multibox Detection) and YOLO (You Only Look Once).
 
@@ -46,6 +43,9 @@ We attempted transfer learning using the pre-trained SSD_inception_v2 model trai
 
 Here is a sample of the dataset.
 ![Udacity Test Site training images](report/udacity_visualization.png)
+
+SSD also works great on the simulator data set and here are some of the results
+![simulator training images](report/sim_visualization.png)
 
 Here are the results of our trained model.
 (Insert image here!)
