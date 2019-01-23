@@ -44,7 +44,7 @@ We attempted transfer learning using the pre-trained SSD_inception_v2 model trai
 Here is a sample of the dataset.
 ![Udacity Test Site training images](report/udacity_visualization.png)
 
-SSD also works great on the simulator data set and here are some of the results
+Sample dataset for simulator images
 ![simulator training images](report/sim_visualization.png)
 
 Here are the results of our trained model.
