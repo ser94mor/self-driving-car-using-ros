@@ -20,15 +20,15 @@ A large part of the project is to implement a traffic light detector/classifier 
 
 ### Simulator - opencv approach
 In opencv based approach we used the basic features of open to solve the problem, the steps are described as below
-..* Image is trandformed to HSV colorspace, as the color feature can be extracted easily in this colorspace.
-..* Mask is applied to isolate red pixels in the image. 
-..* Contour detection is performed on the masked image.
-..* For each contour, area is checked and if it falls under the approximate area of traffic light, polygon detection is performed and checked if the the number of sides is more than minimum required closed loop polygon. 
-..* If the above conditons satisfy there is a redsign in the image. 
+* Image is trandformed to HSV colorspace, as the color feature can be extracted easily in this colorspace.
+* Mask is applied to isolate red pixels in the image. 
+* Contour detection is performed on the masked image.
+* For each contour, area is checked and if it falls under the approximate area of traffic light, polygon detection is performed and checked if the the number of sides is more than minimum required closed loop polygon. 
+* If the above conditons satisfy there is a red sign in the image. 
 
 #### Pros
-..* This approach is very fast.
-..* Uses minimum resources.
+* This approach is very fast.
+* Uses minimum resources.
 
 #### Cons
 ..* This is not robust enough, the thresholds need to be adjusted always.
