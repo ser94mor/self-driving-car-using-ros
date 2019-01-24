@@ -3,9 +3,10 @@
 
 
 ## Team 4Tzones
-![LOGO](./imgs/4Tzones_v2.png)
-|     Team Member     |            Email             | LinkedIn                                               |  
-|---------------------|------------------------------|--------------------------------------------------------|  
+![LOGO](./imgs/4Tzones_v2.png)  
+
+|     Team Member     |            Email             |                    LinkedIn                            |  
+|        :---:        |            :---:             |                      :---:                             |  
 | Mohamed Elgeweily   | mohamed.elgeweily@gmail.com  | https://www.linkedin.com/in/mohamed-elgeweily-05372377 |  
 | Jerry Tan Si Kai    | jerrytansk@gmail.com         | https://www.linkedin.com/in/thejerrytan                |  
 | Karthikeya Subbarao | karthikeya108@gmail.com      | https://www.linkedin.com/in/karthikeyasubbarao         |  
