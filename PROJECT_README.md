@@ -1,17 +1,24 @@
-# Udacity Self-Driving Car Engineer Nanodegree - Capstone project
---------
+# Self-Driving Car using ROS  
+#### Udacity Self-Driving Car Engineer Nanodegree - Capstone Project
 
-## Team 5TZones
-|   Team Member   |  Name   |            Email            |
-|-----------------|---------|-----------------------------|
-| @Elgeweily      | Mohamed | mohamed.elgeweily@gmail.com |
-| @Jerry          | Jerry   | jerrytansk@gmail.com        |
-| @karthik        | Karthik | karthikeya108@gmail.com     |
-| @pradeepkorivi  | Pradeep | pradeepkorivi@gmail.com     |
-| @sergey.morozov | Sergey  | ser94mor@gmail.com          |
+
+## Team 4Tzones
+![LOGO](./imgs/4Tzones_v2.png)
+|     Team Member     |            Email             | LinkedIn |
+|---------------------|------------------------------|--------------------------------------------------------|
+| Mohamed Elgeweily   | mohamed.elgeweily@gmail.com  | https://www.linkedin.com/in/mohamed-elgeweily-05372377 |
+| Jerry Tan Si Kai    | jerrytansk@gmail.com         | https://www.linkedin.com/in/thejerrytan                |
+| Karthikeya Subbarao | karthikeya108@gmail.com      | https://www.linkedin.com/in/karthikeyasubbarao         |
+| Pradeep Korivi      | pradeepkorivi@gmail.com      | https://www.linkedin.com/in/pradeepkorivi              |
+| Sergey Morozov      | ser94mor@gmail.com           | https://www.linkedin.com/in/aoool                      |
+
+All team members contributed equally to the project.
+
+*4Tzones* means "Four Time Zones," indicating that team members were located in 4 different time zones 
+while working on this project. The time zones are from UTC+1 to UTC+8.
 
 ## Software Architecture
-![Software architecture](https://d17h27t6h515a5.cloudfront.net/topher/2017/September/59b6d115_final-project-ros-graph-v2/final-project-ros-graph-v2.png)
+![Software architecture](./imgs/final-project-ros-graph-v2.png)
 Note that obstacle detection is not implemented for this project.
 
 ## Traffic Light Detection Node
