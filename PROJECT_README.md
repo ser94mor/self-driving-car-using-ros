@@ -58,6 +58,34 @@ Sample dataset for simulator images
 Here are the results of our trained model.
 (Insert image here!)
 
+### Other approaches for traffic light detection
+
+We experimented with few other (unsuccessful) approaches to detect traffic light. 
+
+#### Idea
+
+The idea is to use the entire image with a given traffic light color as an individual class. This means we will have 4 classes
+
+ 1. Entire image showing `yellow` traffic sign 
+ 2. Entire image showing `green` traffic sign 
+ 3. Entire image showing `red` traffic sign 
+ 4. Entire image showing `no` traffic sign 
+
+#### Dataset
+
+We created a dataset combining two other datasets that was already made available [here](https://github.com/alex-lechner/Traffic-Light-Classification) and [here](https://github.com/coldKnight/TrafficLight_Detection-TensorFlowAPI#get-the-dataset).
+
+The combined dataset can be found [here](https://www.dropbox.com/s/k8l0aeopw544lud/simulator.tgz?dl=0).
+
+#### Models
+
+We trained couple of models:
+
+1. A simple CNN with two convolutional layers, a fully connected layer and an output layer. The initial results looked promising with `training accuracy > 97%` and `test accuracy > 90%`. However when we deployed and tested the model, the results were not consistent. The car did not always stop at red lights and sometimes it did not move even when the lights were green. Efforts to achieve higher accuracies were in vain. 
+
+2. Used transfer learning for multi-class classification approach using `VGG19` and `InceptionV3` models, using `imagenet` weights. The network did not learn anything after `1-2` epochs and hence the training accuracy never exceeded `65%`.
+
+
 ### Learning Points
 
 
