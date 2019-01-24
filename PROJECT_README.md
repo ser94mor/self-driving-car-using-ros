@@ -26,8 +26,8 @@ Note that obstacle detection is not implemented for this project.
 
 A large part of the project is to implement a traffic light detector/classifier that recognizes the color of nearest upcoming traffic light and publishes it to /waypoint_updater node so it can prepare the car to speed up or slow down accordingly. Because the real world images differ substantially from simulator images, we tried out different approaches for both. The approaches which worked best are described below.
 
-### Simulator - opencv approach
-In opencv based approach we used the basic features of open to solve the problem, the steps are described as below
+### Simulator - OpenCv approach
+In this approach we used the basic features of OpenCv to solve the problem, the steps are described as below
 * Image is trandformed to HSV colorspace, as the color feature can be extracted easily in this colorspace.
 * Mask is applied to isolate red pixels in the image. 
 * Contour detection is performed on the masked image.
