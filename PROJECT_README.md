@@ -3,7 +3,7 @@
 
 
 ## Team 4Tzones
-![LOGO](./imgs/4Tzones_v2.png)  
+![LOGO](./imgs/4Tzones_logo.svg)  
 
 |     Team Member     |            Email             |                    LinkedIn                            |  
 |        :---:        |            :---:             |                      :---:                             |  
