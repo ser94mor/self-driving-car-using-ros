@@ -59,8 +59,6 @@ For example, SSD (Single Shot Multibox Detection) and YOLO (You Only Look Once).
 We attempted transfer learning using the pre-trained SSD_inception_v2 model trained on COCO dataset, 
 and retrain it on our own dataset for NUM_EPOCHS, achieving a final loss of FINAL_LOSS.
 
-@Segey, pls elaborate how you collated the dataset.
-
 Here is a sample of the dataset.
 ![Udacity Test Site training images](report/udacity_visualization.png)
 
