@@ -6,4 +6,5 @@ camera_info:
 stop_line_positions:
     - [8.0, 16.2]
 is_site: True
-classifier: "ssd" # opencv, ssd, simple_cnn, yolo
+classifier: "yolo-tiny" # opencv, ssd, simple_cnn, yolo-tiny
+is_debug: false
