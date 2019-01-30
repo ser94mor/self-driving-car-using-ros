@@ -1,0 +1,4 @@
+name: carnd-capstone
+dependencies:
+	- jupyter
+	- matplotlib==2.1.2
