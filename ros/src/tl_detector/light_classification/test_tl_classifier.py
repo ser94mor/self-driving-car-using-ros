@@ -4,6 +4,7 @@ from light_classification.tl_classifier import TLClassifier
 from light_classification.ssd_tl_classifier import SSDSimTLClassifier, SSDRealTLClassifier
 from light_classification.yolo.yolo_tiny_tl_classifier import YOLOTinyTLClassifier
 from light_classification.opencv_tl_classifier import OpenCVTLClassifier
+from light_classification.simple_cnn_classifier import SimpleCNNTLClassifier
 from roslaunch.parent import ROSLaunchParent
 
 
@@ -30,6 +31,7 @@ class TLClassifierTest(TestCase):
         TLClassifier.register_subclass("ssd-sim")(SSDSimTLClassifier)
         TLClassifier.register_subclass("ssd-real")(SSDRealTLClassifier)
         TLClassifier.register_subclass("yolo-tiny")(YOLOTinyTLClassifier)
+        TLClassifier.register_subclass("simple-cnn")(SimpleCNNTLCLassifier)
 
     def tearDown(self):
         TLClassifier.INSTANCE = None
@@ -38,6 +40,7 @@ class TLClassifierTest(TestCase):
         TLClassifier.register_subclass("ssd-sim")(SSDSimTLClassifier)
         TLClassifier.register_subclass("ssd-real")(SSDRealTLClassifier)
         TLClassifier.register_subclass("yolo-tiny")(YOLOTinyTLClassifier)
+        TLClassifier.register_subclass("simple-cnn")(SimpleCNNTLCLassifier)
 
     def test_get_instance_of(self):
         instance = TLClassifier.get_instance_of("opencv")
