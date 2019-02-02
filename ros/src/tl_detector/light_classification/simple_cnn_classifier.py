@@ -4,9 +4,10 @@ import rospkg
 
 import numpy as np
 import os
+
+import tensorflow as tf
 from keras.models import model_from_json
 from scipy import misc
-import tensorflow as tf
 
 from styx_msgs.msg import TrafficLight
 from light_classification.tl_classifier import TLClassifier
@@ -19,7 +20,12 @@ class SimpleCNNTLClassifier(TLClassifier):
     """
 
     def get_state_count_threshold(self, last_state):
-        return 3
+        if last_state == TrafficLight.RED:
+            # High threshold for accelerating
+            return 3
+
+        # Low threshold for stopping
+        return 1 
 
     def _classify(self, image):
         """Determines the color of the traffic light in the image
@@ -33,17 +39,19 @@ class SimpleCNNTLClassifier(TLClassifier):
         target_image = target_image.reshape(1, 300, 400, 3)
         
         with self.graph.as_default():
-            encoded_label = self.loaded_model.predict_proba(target_image)
-            label_idx = np.argmax(encoded_label)
-            light = self.labels_dict[label_idx]
-            
-            print(light)
-            if light == 'Red':
-                return TrafficLight.RED, None
-            elif light == 'Yellow':
-                return TrafficLight.YELLOW, None
-            elif light == 'Green':
-                return TrafficLight.GREEN, None
+            scores = self.loaded_model.predict_proba(target_image)
+	    # Remove unnecessary dimensions
+            scores = np.squeeze(scores)
+
+            for i, class_score in enumerate(scores):
+                rospy.logdebug('class = %s, score = %s', self.labels_dict[i], str(class_score))
+                # if red or yellow light with score more than confidence threshold
+                if (self.labels_dict[i] == 'Red') and class_score > self.confidence:
+                    print("RED: ",class_score)
+                    return TrafficLight.RED, None
+                if (self.labels_dict[i] == 'Yellow') and class_score > self.confidence:
+                    print("Yellow: ",class_score)
+                    return TrafficLight.YELLOW, None
 
         return TrafficLight.UNKNOWN, None
 
@@ -67,6 +75,9 @@ class SimpleCNNTLClassifier(TLClassifier):
         self.loaded_model.load_weights(model_weights_path)
         print("Loaded model from disk")
         self.graph = tf.get_default_graph()
+
+        # Set confidence
+        self.confidence = 0.1
 
         #compile loaded model
         self.loaded_model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
