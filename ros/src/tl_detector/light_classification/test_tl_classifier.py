@@ -4,7 +4,7 @@ from light_classification.tl_classifier import TLClassifier
 from light_classification.ssd_tl_classifier import SSDSimTLClassifier, SSDRealTLClassifier
 from light_classification.yolo.yolo_tiny_tl_classifier import YOLOTinyTLClassifier
 from light_classification.opencv_tl_classifier import OpenCVTLClassifier
-from light_classification.simple_cnn_classifier import SimpleCNNTLClassifier
+from light_classification.simple_cnn_tl_classifier import SimpleCNNTLClassifier
 from roslaunch.parent import ROSLaunchParent
 
 
@@ -45,7 +45,7 @@ class TLClassifierTest(TestCase):
     def test_get_instance_of(self):
         instance = TLClassifier.get_instance_of("opencv")
         self.assertIsInstance(instance, OpenCVTLClassifier)
-        self.assertEqual(4, len(TLClassifier.KNOWN_TRAFFIC_LIGHT_CLASSIFIERS))
+        self.assertEqual(5, len(TLClassifier.KNOWN_TRAFFIC_LIGHT_CLASSIFIERS))
 
     def test_classify(self):
 

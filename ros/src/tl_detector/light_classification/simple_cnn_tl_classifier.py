@@ -1,4 +1,3 @@
-import cv2
 import rospy
 import rospkg
 
@@ -77,7 +76,7 @@ class SimpleCNNTLClassifier(TLClassifier):
         self.graph = tf.get_default_graph()
 
         # Set confidence
-        self.confidence = 0.1
+        self.confidence = 0.5
 
         #compile loaded model
         self.loaded_model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
