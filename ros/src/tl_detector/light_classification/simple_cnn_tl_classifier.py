@@ -3,6 +3,7 @@ import rospkg
 
 import numpy as np
 import os
+import cv2
 
 import tensorflow as tf
 from keras.models import model_from_json
@@ -33,7 +34,8 @@ class SimpleCNNTLClassifier(TLClassifier):
         Returns:
             int: ID of traffic light color (specified in styx_msgs/TrafficLight)
         """
-        target_image = misc.imresize(image, (300, 400))
+        target_image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)  # convert the image from BGR to RGB
+        target_image = misc.imresize(target_image, (300, 400))
         target_image = target_image / 255.
         target_image = target_image.reshape(1, 300, 400, 3)
         
